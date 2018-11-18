@@ -13,13 +13,21 @@ import javax.persistence.*;
  * @author CTC
  */
 @Entity
+@Table(name="prova")
 public class Prova {
+
+    /**
+     * @param dataCriacao the dataCriacao to set
+     */
+    public void setDataCriacao(java.sql.Timestamp dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
     
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date dataCriacao;
     
     private String nome;
@@ -40,10 +48,6 @@ public class Prova {
 
     public Date getDataCriacao() {
         return dataCriacao;
-    }
-
-    public void setDataCriacao(Date dataCriacao) {
-        this.dataCriacao = dataCriacao;
     }
 
     public String getNome() {

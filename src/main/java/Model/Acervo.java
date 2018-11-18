@@ -4,12 +4,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,15 +17,19 @@ import javax.persistence.OneToMany;
  * @author CTC
  */
 @Entity
+@Table(name="acervo")
 public class Acervo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
     
+    private String nome;
+    
     @OneToMany(mappedBy = "acervo")
-    private Collection<Prova> provasGeradas = new ArrayList<>();;
-
+    @Column(nullable=true)
+    private Collection<Prova> provasGeradas = new ArrayList<>();
+    
     public Long getID() {
         return ID;
     }

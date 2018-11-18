@@ -23,18 +23,8 @@
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.1.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>4.3.1.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-search</artifactId>
-            <version>4.3.1.Final</version>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.3.7.Final</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -47,6 +37,12 @@
             <version>3.25.2</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>JBoss repository</id>
+            <url>http://repository.jboss.com/maven2/</url>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>

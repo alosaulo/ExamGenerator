@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -41,13 +43,21 @@ Contributor(s):
 -->
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ExamGenerator?createDatabaseIfNotExist=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ExamGenerator?createDatabaseIfNotExist=TRUE&amp;useTimezone=true&amp;serverTimezone=UTC&amp;unicode=true&amp;characterEncoding=UTF-8</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.password"></property>
+    
+    <!--Apenas para usar a abordagem class-first-->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
     <property name="use_sql_comments">true</property>
+
+    <!--Mapeamento de classes-->
+    <mapping class="Model.Acervo"></mapping>
+    <mapping class="Model.Prova"></mapping>
   </session-factory>
 </hibernate-configuration>
