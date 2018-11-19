@@ -30,7 +30,7 @@ public class StartDB {
     }
     
     public static void CreateTables(){
-        Session actualSession = NewHibernateUtil.getSessionFactory().openSession();
+        Session actualSession = HibernateUtil.getSessionFactory().openSession();
         
         Acervo acervo = new Acervo();
         acervo.setID(new Random().nextLong());

@@ -45,6 +45,9 @@ public class Acervo {
     public void setProvasGeradas(Collection<Prova> provasGeradas) {
         this.provasGeradas = provasGeradas;
     }
-
-
+    
+    public void addProva(Prova prova){
+        this.provasGeradas.add(prova);
+    }
+    
 }

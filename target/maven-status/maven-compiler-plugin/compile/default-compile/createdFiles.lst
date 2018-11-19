@@ -1,0 +1,4 @@
+Model\Acervo.class
+Model\Prova.class
+DAO\NewHibernateUtil.class
+DAO\StartDB.class

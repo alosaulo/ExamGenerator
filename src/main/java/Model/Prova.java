@@ -16,13 +16,6 @@ import javax.persistence.*;
 @Table(name="prova")
 public class Prova {
 
-    /**
-     * @param dataCriacao the dataCriacao to set
-     */
-    public void setDataCriacao(java.sql.Timestamp dataCriacao) {
-        this.dataCriacao = dataCriacao;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
@@ -44,6 +37,13 @@ public class Prova {
 
     public void setID(Long ID) {
         this.ID = ID;
+    }
+    
+    /**
+    * @param dataCriacao the dataCriacao to set
+    */
+    public void setDataCriacao(java.sql.Timestamp dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
     public Date getDataCriacao() {
